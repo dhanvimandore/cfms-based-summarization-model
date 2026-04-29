@@ -45,7 +45,7 @@ Event Clustering
 Quality Filtering
 Dataset Structuring
 ⚙️ Installation
-git clone https://github.com/your-username/CFMS-Summarization.git
+git clone https://github.com/dhanvimandore/CFMS-Summarization.git
 cd CFMS-Summarization
 pip install -r requirements.txt
 ▶️ Usage
