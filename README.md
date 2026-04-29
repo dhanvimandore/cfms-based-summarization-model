@@ -1,19 +1,23 @@
 📄 CFMS: Consistency-Aware Multi-Document Summarization
 
-A research-driven framework for multi-document summarization (MDS) that enhances factual consistency by explicitly modeling agreement across multiple sources.
+A research-driven framework for multi-document summarization (MDS) that improves factual consistency by explicitly modeling agreement across multiple news sources.
 
 🚀 Overview
 
-With the rapid growth of digital news platforms, the same event is often reported by multiple sources, leading to redundancy, inconsistency, and information overload.
+In real-world scenarios, the same event is reported by multiple news sources with variations in wording, emphasis, and factual detail. This leads to:
 
-CFMS (Consistency-Focused Multi-Source Summarization) addresses these challenges by introducing structured cross-source reasoning to generate reliable, coherent, and factually grounded summaries.
+Information redundancy
+Conflicting narratives
+Cognitive overload for users
 
-🧠 Key Features
-Consistency-aware summarization
-Cross-source agreement modeling
-Reduced redundancy and hallucination
-Improved factual reliability
-Custom dataset pipeline (NewsSumm++)
+This project proposes CFMS (Consistency-Focused Multi-Source Summarization), a novel framework that introduces structured cross-source reasoning to generate reliable and coherent summaries.
+
+🧠 Key Contributions
+📌 Introduced CFMS framework for consistency-aware summarization
+📌 Explicit modeling of cross-source agreement
+📌 Designed Cross-Source Alignment, Consistency Scoring, and Factual Attention
+📌 Built NewsSumm++ dataset pipeline for Indian English news
+📌 Achieved strong performance on ROUGE and BERTScore
 🏗️ Architecture
 Input Documents
       ↓
@@ -30,28 +34,30 @@ Flan-T5 Decoder
 Final Summary
 📊 Dataset: NewsSumm++
 
-A curated dataset for Indian English multi-document news summarization.
+A custom dataset designed for multi-document summarization in Indian English news.
 
-Highlights:
-📄 45,284 articles
-📚 387 event clusters
-🌍 Multi-source news data
-Pipeline:
+🔹 Statistics
+45,284 Articles
+387 Event Clusters
+Multi-source news aggregation
+🔹 Pipeline
 Data Collection
-Data Cleaning
-Deduplication (FAISS-based)
+Cleaning
+Deduplication (FAISS)
 Semantic Filtering
 Event Clustering
 Quality Filtering
 Dataset Structuring
-⚙️ Installation
-git clone https://github.com/dhanvimandore/CFMS-Summarization.git
-cd CFMS-Summarization
-pip install -r requirements.txt
+⚙️ Tech Stack
+Python
+PyTorch
+HuggingFace Transformers
+FAISS
+Google Colab / Local Environment
 ▶️ Usage
-Train Model
+🔹 Train Model
 python train.py
-Generate Summary
+🔹 Generate Summary
 python generate.py --input "path_to_documents"
 📈 Results
 Metric	Score
@@ -59,33 +65,28 @@ ROUGE-1	0.3903
 ROUGE-2	0.1954
 ROUGE-L	0.3305
 BERTScore	0.8803
-🔍 Model Comparison
-Feature	CFMS	Hierarchical Models
-Factual Consistency	High	Moderate
-Scalability	Limited	High
-Complexity	High	Low
-Performance	Strong	Strong
+🔍 Model Insight
+
+CFMS improves factual consistency by prioritizing information that appears across multiple sources, making summaries:
+
+More reliable
+Less redundant
+Better aligned with real-world facts
 ⚠️ Limitations
-High computational cost
-Requires quality clustered data
-Sensitive to noise in inputs
-Token alignment constraints
+Computationally intensive
+Requires high-quality clustered data
+Token-level alignment may truncate long inputs
+Training stability depends on dataset size
 🔮 Future Work
-Multilingual summarization
-Real-time processing
-Hybrid architectures (CFMS + Hierarchical)
+Hybrid model (CFMS + Hierarchical architecture)
+Real-time summarization
+Multilingual extension
 Graph-based cross-document reasoning
 🧪 Demo
 
 Run the demo:
 
 open cfms_demo.html
-🛠️ Tech Stack
-Python
-PyTorch
-HuggingFace Transformers
-FAISS
-Google Colab / Local Environment
 👩‍💻 Author
 
 Dhanvi Mandore
@@ -93,22 +94,17 @@ MIT World Peace University, Pune
 
 🤝 Acknowledgment
 
-This work was carried out as part of an internship and research initiative supported by:
+This work was developed with support from:
 
 Suvidha Foundation
-
-The author sincerely acknowledges the guidance, support, and resources provided by the organization during the development of this project.
-
 📜 Citation
-
-If you use this work, please cite:
-
 @article{mandore_cfms_2026,
-  title={CFMS: Consistency-Aware Multi-Document Summarization for Indian English News},
+  title={CFMS: Consistency-Aware Multi-Document Summarization},
   author={Mandore, Dhanvi},
   year={2026},
-  institution={Developed with support from Suvidha Foundation, Nagpur}
+  institution={MIT World Peace University},
+  {Suvidha Foundation, Nagpur}
 }
 📜 License
 
-This project is intended for academic and research purposes only.
+For academic and research purposes only.
